@@ -118,7 +118,7 @@ endif()
 if(NOT LG_VADDR)
     if(CMAKE_SYSTEM_PROCESSOR MATCHES "aarch64") # maybe "arm64" too?
         set(LG_VADDR 48)
-    elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "x86_64")
+    elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "x86_64" OR CMAKE_SYSTEM_PROCESSOR MATCHES "AMD64")
         GetSystemAddrBits(LG_VADDR)
         # Cache result so we don't run the check every time
         set(LG_VADDR ${LG_VADDR} CACHE INTERNAL "System Address Bits")
